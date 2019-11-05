@@ -1,18 +1,29 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import {render, fireEvent, waitForElement} from '@testing-library/react'
+import renderer from 'react-test-renderer'
+import { toMatchImageSnapshot } from 'jest-image-snapshot'
 import {
     USERNAME_VALIDATION_ERROR_MESSAGE,
     PASSWORD_VALIDATION_ERROR_MESSAGE,
 } from './LoginForm.helper';
 import LoginForm from './LoginForm'
 
+expect.extend({ toMatchImageSnapshot });
 
 describe('Login', () => {
     describe('LoginForm', () => {
 
         const USERNAME = 'USERNAME'
         const PASSWORD = 'PASSWORD'
+
+        it('renders correctly', () => {
+            const tree = renderer
+                .create(<LoginForm onSubmitCallBack={() => {}} />)
+                .toJSON();
+            expect(tree).toMatchSnapshot();
+            expect(tree).toMatchImageSnapshot();
+        })
 
         it('login form triggers onSubmitCallBack when clicked with proper args', () => {
             const submitCb = jest.fn();

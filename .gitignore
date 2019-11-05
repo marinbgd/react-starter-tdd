@@ -38,3 +38,7 @@ dist
 
 # Mac files
 .DS_Store
+
+# Testing snapshots
+__image_snapshots__
+__snapshots__
