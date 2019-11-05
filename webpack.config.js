@@ -1,9 +1,9 @@
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import path from 'path';
-import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
-export default {
+module.exports = {
     resolve: {
         extensions: ['*', '.js', '.jsx', '.json'],
         // To support react-hot-loader

@@ -1,0 +1,25 @@
+.FormRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-bottom: 0.5em;
+}
+
+.FormCell {
+    display: inline-block;
+    padding: 0.5em;
+}
+
+.FormCell33 {
+    width: 33.33%
+}
+
+.FormSubmitButton {
+    display: block;
+    padding: 0.5em;
+}
+
+.ErrorStyle {
+    color: red;
+}
+

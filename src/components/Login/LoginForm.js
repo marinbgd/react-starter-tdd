@@ -4,9 +4,10 @@ import _isEqual from 'lodash/isEqual'
 import {
     USERNAME_VALIDATION_ERROR_MESSAGE,
     PASSWORD_VALIDATION_ERROR_MESSAGE,
-} from './LoginForm.helper';
+} from './LoginForm.helper'
+import styles from './LoginForm.scss'
 
-const  LoginForm = ({onSubmitCallBack}) => {
+const LoginForm = ({onSubmitCallBack}) => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -56,29 +57,39 @@ const  LoginForm = ({onSubmitCallBack}) => {
 
     return (
         <form onSubmit={submit} autoComplete="off" autoCorrect="off" autoCapitalize="off">
-            <label>
-                <span>Username:</span>
+            <label className={styles.FormRow}>
+                <span className={[styles.FormCell, styles.FormCell33].join(' ')}>Username:</span>
                 <input
+                    className={[styles.FormCell, styles.FormCell33].join(' ')}
                     type="text"
                     value={username}
                     onChange={event => {setUsername(event.currentTarget.value)}}
                     autoComplete="off"
                 />
-                <span>{validationErrors.username}</span>
+                <span className={[styles.FormCell, styles.FormCell33, styles.ErrorStyle].join(' ')}>
+                    {validationErrors.username}
+                </span>
             </label>
 
-            <label>
-                <span>Password:</span>
+            <label className={styles.FormRow}>
+                <span className={[styles.FormCell, styles.FormCell33].join(' ')}>Password:</span>
                 <input
+                    className={[styles.FormCell, styles.FormCell33].join(' ')}
                     type="password"
                     value={password}
                     onChange={event => {setPassword(event.currentTarget.value)}}
                     autoComplete="off"
                 />
-                <span>{validationErrors.password}</span>
+                <span className={[styles.FormCell, styles.FormCell33, styles.ErrorStyle].join(' ')}>
+                    {validationErrors.password}
+                </span>
             </label>
 
-            <button type="submit">Login</button>
+            <button
+                className={[styles.FormSubmitButton].join(' ')}
+                type="submit">
+                Login
+            </button>
         </form>
     )
 }

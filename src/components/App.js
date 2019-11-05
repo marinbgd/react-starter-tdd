@@ -8,9 +8,9 @@ import HomePage from './HomePage';
 import NotFoundPage from './NotFoundPage';
 import PropTypes from 'prop-types';
 import {hot} from 'react-hot-loader';
-import LoginPage from './Login/LoginPage';
 
 const CssModuleTest = lazy(() => import('../components/CssModuleTest/CssModuleTest'));
+const LoginPage = lazy(() => import('./Login/LoginPage'));
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
